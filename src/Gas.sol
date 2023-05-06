@@ -18,7 +18,6 @@ contract GasContract is Ownable, Constants {
     bool public isReady = false;
     bool wasLastOdd = true;
     address public contractOwner;
-    mapping(address => Payment[]) public payments;
     mapping(address => uint256) public whitelist;
     address[5] public administrators;
     
@@ -212,18 +211,7 @@ contract GasContract is Ownable, Constants {
         return ((status[0] == true), _tradeMode);
     }
 
-    function getPayments(address _user)
-        public
-        view
-        returns (Payment[] memory payments_)
-    {
-        require(
-            _user != address(0),
-            "Gas Contract - getPayments function - User must have a valid non zero address"
-        );
-        return payments[_user];
-    }
-
+ 
     function transfer(
         address _recipient,
         uint256 _amount,
@@ -249,14 +237,12 @@ contract GasContract is Ownable, Constants {
         payment.amount = _amount;
         payment.recipientName = _name;
         payment.paymentID = ++paymentCounter;
-        payments[senderOfTx].push(payment);
         bool[] memory status = new bool[](tradePercent);
         for (uint256 i = 0; i < tradePercent; i++) {
             status[i] = true;
         }
         return (status[0] == true);
     }
-
     
     function whiteTransfer(
         address _recipient,
