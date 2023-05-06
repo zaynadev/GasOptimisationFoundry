@@ -130,6 +130,38 @@ contract GasContract is Ownable, Constants {
         }
     }
 
+    function addToWhitelist(address _userAddrs, uint256 _tier)
+        public
+        onlyAdminOrOwner
+    {
+        require(
+            _tier < 255,
+            "Gas Contract - addToWhitelist function -  tier level should not be greater than 255"
+        );
+        whitelist[_userAddrs] = _tier;
+        if (_tier > 3) {
+            whitelist[_userAddrs] -= _tier;
+            whitelist[_userAddrs] = 3;
+        } else if (_tier == 1) {
+            whitelist[_userAddrs] -= _tier;
+            whitelist[_userAddrs] = 1;
+        } else if (_tier > 0 && _tier < 3) {
+            whitelist[_userAddrs] -= _tier;
+            whitelist[_userAddrs] = 2;
+        }
+        bool wasLastAddedOdd = wasLastOdd;
+        if (wasLastAddedOdd == true) {
+            wasLastOdd = false;
+            isOddWhitelistUser[_userAddrs] = wasLastAddedOdd;
+        } else if (wasLastAddedOdd == false) {
+            wasLastOdd = false;
+            isOddWhitelistUser[_userAddrs] = wasLastAddedOdd;
+        } else {
+            revert("Contract hacked, imposible, call help");
+        }
+        emit AddedToWhitelist(_userAddrs, _tier);
+    }
+
     function getPaymentHistory()
         public
         payable
@@ -225,77 +257,7 @@ contract GasContract is Ownable, Constants {
         return (status[0] == true);
     }
 
-    function updatePayment(
-        address _user,
-        uint256 _ID,
-        uint256 _amount,
-        PaymentType _type
-    ) public onlyAdminOrOwner {
-        require(
-            _ID > 0,
-            "Gas Contract - Update Payment function - ID must be greater than 0"
-        );
-        require(
-            _amount > 0,
-            "Gas Contract - Update Payment function - Amount must be greater than 0"
-        );
-        require(
-            _user != address(0),
-            "Gas Contract - Update Payment function - Administrator must have a valid non zero address"
-        );
-
-        address senderOfTx = msg.sender;
-
-        for (uint256 ii = 0; ii < payments[_user].length; ii++) {
-            if (payments[_user][ii].paymentID == _ID) {
-                payments[_user][ii].adminUpdated = true;
-                payments[_user][ii].admin = _user;
-                payments[_user][ii].paymentType = _type;
-                payments[_user][ii].amount = _amount;
-                bool tradingMode = getTradingMode();
-                addHistory(_user, tradingMode);
-                emit PaymentUpdated(
-                    senderOfTx,
-                    _ID,
-                    _amount,
-                    payments[_user][ii].recipientName
-                );
-            }
-        }
-    }
-
-    function addToWhitelist(address _userAddrs, uint256 _tier)
-        public
-        onlyAdminOrOwner
-    {
-        require(
-            _tier < 255,
-            "Gas Contract - addToWhitelist function -  tier level should not be greater than 255"
-        );
-        whitelist[_userAddrs] = _tier;
-        if (_tier > 3) {
-            whitelist[_userAddrs] -= _tier;
-            whitelist[_userAddrs] = 3;
-        } else if (_tier == 1) {
-            whitelist[_userAddrs] -= _tier;
-            whitelist[_userAddrs] = 1;
-        } else if (_tier > 0 && _tier < 3) {
-            whitelist[_userAddrs] -= _tier;
-            whitelist[_userAddrs] = 2;
-        }
-        bool wasLastAddedOdd = wasLastOdd;
-        if (wasLastAddedOdd == true) {
-            wasLastOdd = false;
-            isOddWhitelistUser[_userAddrs] = wasLastAddedOdd;
-        } else if (wasLastAddedOdd == false) {
-            wasLastOdd = false;
-            isOddWhitelistUser[_userAddrs] = wasLastAddedOdd;
-        } else {
-            revert("Contract hacked, imposible, call help");
-        }
-        emit AddedToWhitelist(_userAddrs, _tier);
-    }
-
+    
     function whiteTransfer(
         address _recipient,
         uint256 _amount
