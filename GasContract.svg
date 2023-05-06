@@ -12,82 +12,76 @@
 <!-- 6 -->
 <g id="node1" class="node">
 <title>6</title>
-<polygon fill="#f2f2f2" stroke="black" points="0,-195.9 0,-592.7 1272.19,-592.7 1272.19,-195.9 0,-195.9"/>
-<text text-anchor="middle" x="636.1" y="-576.1" font-family="Courier New" font-size="14.00">GasContract &lt;&lt;Contract&gt;&gt;</text>
-<polyline fill="none" stroke="black" points="0,-567.9 1272.19,-567.9 "/>
-<text text-anchor="middle" x="24.8" y="-551.3" font-family="Courier New" font-size="14.00">slot</text>
-<polyline fill="none" stroke="black" points="0,-543.1 49.61,-543.1 "/>
-<text text-anchor="middle" x="24.8" y="-526.5" font-family="Courier New" font-size="14.00">0</text>
-<polyline fill="none" stroke="black" points="0,-518.3 49.61,-518.3 "/>
-<text text-anchor="middle" x="24.8" y="-501.7" font-family="Courier New" font-size="14.00">1</text>
-<polyline fill="none" stroke="black" points="0,-493.5 49.61,-493.5 "/>
-<text text-anchor="middle" x="24.8" y="-476.9" font-family="Courier New" font-size="14.00">2</text>
-<polyline fill="none" stroke="black" points="0,-468.7 49.61,-468.7 "/>
-<text text-anchor="middle" x="24.8" y="-452.1" font-family="Courier New" font-size="14.00">3</text>
-<polyline fill="none" stroke="black" points="0,-443.9 49.61,-443.9 "/>
-<text text-anchor="middle" x="24.8" y="-427.3" font-family="Courier New" font-size="14.00">4</text>
-<polyline fill="none" stroke="black" points="0,-419.1 49.61,-419.1 "/>
-<text text-anchor="middle" x="24.8" y="-402.5" font-family="Courier New" font-size="14.00">5</text>
-<polyline fill="none" stroke="black" points="0,-394.3 49.61,-394.3 "/>
-<text text-anchor="middle" x="24.8" y="-377.7" font-family="Courier New" font-size="14.00">6</text>
-<polyline fill="none" stroke="black" points="0,-369.5 49.61,-369.5 "/>
-<text text-anchor="middle" x="24.8" y="-352.9" font-family="Courier New" font-size="14.00">7</text>
-<polyline fill="none" stroke="black" points="0,-344.7 49.61,-344.7 "/>
-<text text-anchor="middle" x="24.8" y="-328.1" font-family="Courier New" font-size="14.00">8&#45;12</text>
-<polyline fill="none" stroke="black" points="0,-319.9 49.61,-319.9 "/>
-<text text-anchor="middle" x="24.8" y="-303.3" font-family="Courier New" font-size="14.00">13</text>
-<polyline fill="none" stroke="black" points="0,-295.1 49.61,-295.1 "/>
-<text text-anchor="middle" x="24.8" y="-278.5" font-family="Courier New" font-size="14.00">14</text>
-<polyline fill="none" stroke="black" points="0,-270.3 49.61,-270.3 "/>
-<text text-anchor="middle" x="24.8" y="-253.7" font-family="Courier New" font-size="14.00">15</text>
-<polyline fill="none" stroke="black" points="0,-245.5 49.61,-245.5 "/>
-<text text-anchor="middle" x="24.8" y="-228.9" font-family="Courier New" font-size="14.00">16</text>
-<polyline fill="none" stroke="black" points="0,-220.7 49.61,-220.7 "/>
-<text text-anchor="middle" x="24.8" y="-204.1" font-family="Courier New" font-size="14.00">17</text>
-<polyline fill="none" stroke="black" points="49.61,-195.9 49.61,-567.9 "/>
-<text text-anchor="middle" x="660.9" y="-551.3" font-family="Courier New" font-size="14.00">type: &lt;inherited contract&gt;.variable (bytes)</text>
-<polyline fill="none" stroke="black" points="49.61,-543.1 1272.19,-543.1 "/>
-<text text-anchor="middle" x="120.62" y="-526.5" font-family="Courier New" font-size="14.00">unallocated (9)</text>
-<polyline fill="none" stroke="black" points="191.63,-518.3 191.63,-543.1 "/>
-<text text-anchor="middle" x="338.25" y="-526.5" font-family="Courier New" font-size="14.00">uint8: Constants.dividendFlag (1)</text>
-<polyline fill="none" stroke="black" points="484.87,-518.3 484.87,-543.1 "/>
-<text text-anchor="middle" x="618.89" y="-526.5" font-family="Courier New" font-size="14.00">uint8: Constants.basicFlag (1)</text>
-<polyline fill="none" stroke="black" points="752.91,-518.3 752.91,-543.1 "/>
-<text text-anchor="middle" x="886.93" y="-526.5" font-family="Courier New" font-size="14.00">uint8: Constants.tradeFlag (1)</text>
-<polyline fill="none" stroke="black" points="1020.95,-518.3 1020.95,-543.1 "/>
-<text text-anchor="middle" x="1146.57" y="-526.5" font-family="Courier New" font-size="14.00">address: Ownable._owner (20)</text>
-<polyline fill="none" stroke="black" points="49.61,-518.3 1272.19,-518.3 "/>
-<text text-anchor="middle" x="660.62" y="-501.7" font-family="Courier New" font-size="14.00">uint256: totalSupply (32)</text>
-<polyline fill="none" stroke="black" points="49.61,-493.5 1272.19,-493.5 "/>
-<text text-anchor="middle" x="660.72" y="-476.9" font-family="Courier New" font-size="14.00">uint256: paymentCounter (32)</text>
-<polyline fill="none" stroke="black" points="49.61,-468.7 1272.19,-468.7 "/>
-<text text-anchor="middle" x="660.63" y="-452.1" font-family="Courier New" font-size="14.00">mapping(address=&gt;uint256): balances (32)</text>
-<polyline fill="none" stroke="black" points="49.61,-443.9 1272.19,-443.9 "/>
-<text text-anchor="middle" x="227.82" y="-427.3" font-family="Courier New" font-size="14.00">unallocated (11)</text>
-<polyline fill="none" stroke="black" points="406.03,-419.1 406.03,-443.9 "/>
-<text text-anchor="middle" x="630.95" y="-427.3" font-family="Courier New" font-size="14.00">address: contractOwner (20)</text>
-<polyline fill="none" stroke="black" points="855.86,-419.1 855.86,-443.9 "/>
-<text text-anchor="middle" x="1063.98" y="-427.3" font-family="Courier New" font-size="14.00">uint8: tradePercent (1)</text>
-<polyline fill="none" stroke="black" points="49.61,-419.1 1272.19,-419.1 "/>
-<text text-anchor="middle" x="660.72" y="-402.5" font-family="Courier New" font-size="14.00">uint256: tradeMode (32)</text>
-<polyline fill="none" stroke="black" points="49.61,-394.3 1272.19,-394.3 "/>
-<text text-anchor="middle" x="660.53" y="-377.7" font-family="Courier New" font-size="14.00">mapping(address=&gt;Payment[]): payments (32)</text>
-<polyline fill="none" stroke="black" points="49.61,-369.5 1272.19,-369.5 "/>
-<text text-anchor="middle" x="660.83" y="-352.9" font-family="Courier New" font-size="14.00">mapping(address=&gt;uint256): whitelist (32)</text>
-<polyline fill="none" stroke="black" points="49.61,-344.7 1272.19,-344.7 "/>
-<text text-anchor="middle" x="660.53" y="-328.1" font-family="Courier New" font-size="14.00">address[5]: administrators (160)</text>
-<polyline fill="none" stroke="black" points="49.61,-319.9 1272.19,-319.9 "/>
-<text text-anchor="middle" x="352.82" y="-303.3" font-family="Courier New" font-size="14.00">unallocated (31)</text>
-<polyline fill="none" stroke="black" points="656.03,-295.1 656.03,-319.9 "/>
-<text text-anchor="middle" x="963.94" y="-303.3" font-family="Courier New" font-size="14.00">bool: isReady (1)</text>
-<polyline fill="none" stroke="black" points="49.61,-295.1 1272.19,-295.1 "/>
-<text text-anchor="middle" x="660.63" y="-278.5" font-family="Courier New" font-size="14.00">History[]: paymentHistory (32)</text>
-<polyline fill="none" stroke="black" points="49.61,-270.3 1272.19,-270.3 "/>
-<text text-anchor="middle" x="660.42" y="-253.7" font-family="Courier New" font-size="14.00">uint256: wasLastOdd (32)</text>
-<polyline fill="none" stroke="black" points="49.61,-245.5 1272.19,-245.5 "/>
-<text text-anchor="middle" x="660.64" y="-228.9" font-family="Courier New" font-size="14.00">mapping(address=&gt;uint256): isOddWhitelistUser (32)</text>
-<polyline fill="none" stroke="black" points="49.61,-220.7 1272.19,-220.7 "/>
-<text text-anchor="middle" x="660.64" y="-204.1" font-family="Courier New" font-size="14.00">mapping(address=&gt;ImportantStruct): whiteListStruct (32)</text>
+<polygon fill="#f2f2f2" stroke="black" points="0,-233.7 0,-580.9 1272.19,-580.9 1272.19,-233.7 0,-233.7"/>
+<text text-anchor="middle" x="636.1" y="-564.3" font-family="Courier New" font-size="14.00">GasContract &lt;&lt;Contract&gt;&gt;</text>
+<polyline fill="none" stroke="black" points="0,-556.1 1272.19,-556.1 "/>
+<text text-anchor="middle" x="24.8" y="-539.5" font-family="Courier New" font-size="14.00">slot</text>
+<polyline fill="none" stroke="black" points="0,-531.3 49.61,-531.3 "/>
+<text text-anchor="middle" x="24.8" y="-514.7" font-family="Courier New" font-size="14.00">0</text>
+<polyline fill="none" stroke="black" points="0,-506.5 49.61,-506.5 "/>
+<text text-anchor="middle" x="24.8" y="-489.9" font-family="Courier New" font-size="14.00">1</text>
+<polyline fill="none" stroke="black" points="0,-481.7 49.61,-481.7 "/>
+<text text-anchor="middle" x="24.8" y="-465.1" font-family="Courier New" font-size="14.00">2</text>
+<polyline fill="none" stroke="black" points="0,-456.9 49.61,-456.9 "/>
+<text text-anchor="middle" x="24.8" y="-440.3" font-family="Courier New" font-size="14.00">3</text>
+<polyline fill="none" stroke="black" points="0,-432.1 49.61,-432.1 "/>
+<text text-anchor="middle" x="24.8" y="-415.5" font-family="Courier New" font-size="14.00">4</text>
+<polyline fill="none" stroke="black" points="0,-407.3 49.61,-407.3 "/>
+<text text-anchor="middle" x="24.8" y="-390.7" font-family="Courier New" font-size="14.00">5</text>
+<polyline fill="none" stroke="black" points="0,-382.5 49.61,-382.5 "/>
+<text text-anchor="middle" x="24.8" y="-365.9" font-family="Courier New" font-size="14.00">6</text>
+<polyline fill="none" stroke="black" points="0,-357.7 49.61,-357.7 "/>
+<text text-anchor="middle" x="24.8" y="-341.1" font-family="Courier New" font-size="14.00">7</text>
+<polyline fill="none" stroke="black" points="0,-332.9 49.61,-332.9 "/>
+<text text-anchor="middle" x="24.8" y="-316.3" font-family="Courier New" font-size="14.00">8&#45;12</text>
+<polyline fill="none" stroke="black" points="0,-308.1 49.61,-308.1 "/>
+<text text-anchor="middle" x="24.8" y="-291.5" font-family="Courier New" font-size="14.00">13</text>
+<polyline fill="none" stroke="black" points="0,-283.3 49.61,-283.3 "/>
+<text text-anchor="middle" x="24.8" y="-266.7" font-family="Courier New" font-size="14.00">14</text>
+<polyline fill="none" stroke="black" points="0,-258.5 49.61,-258.5 "/>
+<text text-anchor="middle" x="24.8" y="-241.9" font-family="Courier New" font-size="14.00">15</text>
+<polyline fill="none" stroke="black" points="49.61,-233.7 49.61,-556.1 "/>
+<text text-anchor="middle" x="660.9" y="-539.5" font-family="Courier New" font-size="14.00">type: &lt;inherited contract&gt;.variable (bytes)</text>
+<polyline fill="none" stroke="black" points="49.61,-531.3 1272.19,-531.3 "/>
+<text text-anchor="middle" x="120.62" y="-514.7" font-family="Courier New" font-size="14.00">unallocated (9)</text>
+<polyline fill="none" stroke="black" points="191.63,-506.5 191.63,-531.3 "/>
+<text text-anchor="middle" x="338.25" y="-514.7" font-family="Courier New" font-size="14.00">uint8: Constants.dividendFlag (1)</text>
+<polyline fill="none" stroke="black" points="484.87,-506.5 484.87,-531.3 "/>
+<text text-anchor="middle" x="618.89" y="-514.7" font-family="Courier New" font-size="14.00">uint8: Constants.basicFlag (1)</text>
+<polyline fill="none" stroke="black" points="752.91,-506.5 752.91,-531.3 "/>
+<text text-anchor="middle" x="886.93" y="-514.7" font-family="Courier New" font-size="14.00">uint8: Constants.tradeFlag (1)</text>
+<polyline fill="none" stroke="black" points="1020.95,-506.5 1020.95,-531.3 "/>
+<text text-anchor="middle" x="1146.57" y="-514.7" font-family="Courier New" font-size="14.00">address: Ownable._owner (20)</text>
+<polyline fill="none" stroke="black" points="49.61,-506.5 1272.19,-506.5 "/>
+<text text-anchor="middle" x="660.62" y="-489.9" font-family="Courier New" font-size="14.00">uint256: totalSupply (32)</text>
+<polyline fill="none" stroke="black" points="49.61,-481.7 1272.19,-481.7 "/>
+<text text-anchor="middle" x="660.72" y="-465.1" font-family="Courier New" font-size="14.00">uint256: paymentCounter (32)</text>
+<polyline fill="none" stroke="black" points="49.61,-456.9 1272.19,-456.9 "/>
+<text text-anchor="middle" x="660.72" y="-440.3" font-family="Courier New" font-size="14.00">uint256: tradeMode (32)</text>
+<polyline fill="none" stroke="black" points="49.61,-432.1 1272.19,-432.1 "/>
+<text text-anchor="middle" x="660.63" y="-415.5" font-family="Courier New" font-size="14.00">mapping(address=&gt;uint256): balances (32)</text>
+<polyline fill="none" stroke="black" points="49.61,-407.3 1272.19,-407.3 "/>
+<text text-anchor="middle" x="149.12" y="-390.7" font-family="Courier New" font-size="14.00">unallocated (9)</text>
+<polyline fill="none" stroke="black" points="248.63,-382.5 248.63,-407.3 "/>
+<text text-anchor="middle" x="398.54" y="-390.7" font-family="Courier New" font-size="14.00">address: contractOwner (20)</text>
+<polyline fill="none" stroke="black" points="548.46,-382.5 548.46,-407.3 "/>
+<text text-anchor="middle" x="668.98" y="-390.7" font-family="Courier New" font-size="14.00">bool: wasLastOdd (1)</text>
+<polyline fill="none" stroke="black" points="789.49,-382.5 789.49,-407.3 "/>
+<text text-anchor="middle" x="897.4" y="-390.7" font-family="Courier New" font-size="14.00">bool: isReady (1)</text>
+<polyline fill="none" stroke="black" points="1005.31,-382.5 1005.31,-407.3 "/>
+<text text-anchor="middle" x="1138.43" y="-390.7" font-family="Courier New" font-size="14.00">uint8: tradePercent (1)</text>
+<polyline fill="none" stroke="black" points="49.61,-382.5 1272.19,-382.5 "/>
+<text text-anchor="middle" x="660.53" y="-365.9" font-family="Courier New" font-size="14.00">mapping(address=&gt;Payment[]): payments (32)</text>
+<polyline fill="none" stroke="black" points="49.61,-357.7 1272.19,-357.7 "/>
+<text text-anchor="middle" x="660.83" y="-341.1" font-family="Courier New" font-size="14.00">mapping(address=&gt;uint256): whitelist (32)</text>
+<polyline fill="none" stroke="black" points="49.61,-332.9 1272.19,-332.9 "/>
+<text text-anchor="middle" x="660.53" y="-316.3" font-family="Courier New" font-size="14.00">address[5]: administrators (160)</text>
+<polyline fill="none" stroke="black" points="49.61,-308.1 1272.19,-308.1 "/>
+<text text-anchor="middle" x="660.63" y="-291.5" font-family="Courier New" font-size="14.00">History[]: paymentHistory (32)</text>
+<polyline fill="none" stroke="black" points="49.61,-283.3 1272.19,-283.3 "/>
+<text text-anchor="middle" x="660.54" y="-266.7" font-family="Courier New" font-size="14.00">mapping(address=&gt;bool): isOddWhitelistUser (32)</text>
+<polyline fill="none" stroke="black" points="49.61,-258.5 1272.19,-258.5 "/>
+<text text-anchor="middle" x="660.64" y="-241.9" font-family="Courier New" font-size="14.00">mapping(address=&gt;ImportantStruct): whiteListStruct (32)</text>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
@@ -133,9 +127,9 @@
 </g>
 <!-- 6&#45;&gt;1 -->
 <g id="edge1" class="edge">
-<title>6:18&#45;&gt;1</title>
-<path fill="none" stroke="black" d="M1272.1,-382.3C1310.7,-382.3 1279.4,-435.58 1308.19,-461.3 1309.36,-462.35 1310.54,-463.38 1311.73,-464.41"/>
-<polygon fill="black" stroke="black" points="1309.8,-467.35 1319.74,-471.04 1314.27,-461.96 1309.8,-467.35"/>
+<title>6:20&#45;&gt;1</title>
+<path fill="none" stroke="black" d="M1272.1,-370.3C1315.61,-370.3 1276.49,-431.5 1308.19,-461.3 1309.3,-462.34 1310.42,-463.38 1311.55,-464.4"/>
+<polygon fill="black" stroke="black" points="1309.3,-467.08 1319.14,-471.01 1313.9,-461.8 1309.3,-467.08"/>
 </g>
 <!-- 2 -->
 <g id="node3" class="node">
@@ -173,16 +167,16 @@
 </g>
 <!-- 6&#45;&gt;2 -->
 <g id="edge2" class="edge">
-<title>6:24&#45;&gt;2</title>
-<path fill="none" stroke="black" d="M1272.1,-332.3C1338.05,-332.3 1410.13,-339.45 1472.99,-348.05"/>
-<polygon fill="black" stroke="black" points="1472.61,-351.53 1483,-349.44 1473.57,-344.6 1472.61,-351.53"/>
+<title>6:26&#45;&gt;2</title>
+<path fill="none" stroke="black" d="M1272.1,-320.3C1338.34,-320.3 1410.48,-329.36 1473.3,-340.25"/>
+<polygon fill="black" stroke="black" points="1472.85,-343.72 1483.3,-342.01 1474.06,-336.83 1472.85,-343.72"/>
 </g>
 <!-- 4 -->
 <g id="node5" class="node">
 <title>4</title>
 <polygon fill="#f2f2f2" stroke="black" points="1357.4,-192.7 1357.4,-283.9 1927.89,-283.9 1927.89,-192.7 1357.4,-192.7"/>
 <text text-anchor="middle" x="1642.64" y="-267.3" font-family="Courier New" font-size="14.00">History[]: paymentHistory &lt;&lt;Array&gt;&gt;</text>
-<text text-anchor="middle" x="1642.64" y="-250.5" font-family="Courier New" font-size="14.00">0xbb7b4a454dc3493923482f07822329ed19e8244eff582cc204f8554c3620c3fd</text>
+<text text-anchor="middle" x="1642.64" y="-250.5" font-family="Courier New" font-size="14.00">0xd7b6990105719101dabeb77144f2a3385c8033acd3af97e9423a695e81ad1eb5</text>
 <polyline fill="none" stroke="black" points="1357.4,-242.3 1927.89,-242.3 "/>
 <text text-anchor="middle" x="1466.1" y="-225.7" font-family="Courier New" font-size="14.00">offset</text>
 <polyline fill="none" stroke="black" points="1357.4,-217.5 1574.8,-217.5 "/>
@@ -194,9 +188,9 @@
 </g>
 <!-- 6&#45;&gt;4 -->
 <g id="edge3" class="edge">
-<title>6:30&#45;&gt;4</title>
-<path fill="none" stroke="black" d="M1272.19,-282.3C1296.64,-282.3 1321.94,-281.34 1347.29,-279.7"/>
-<polygon fill="black" stroke="black" points="1347.65,-283.18 1357.39,-279.01 1347.18,-276.2 1347.65,-283.18"/>
+<title>6:31&#45;&gt;4</title>
+<path fill="none" stroke="black" d="M1272.19,-295.3C1294.27,-295.3 1330.72,-291.27 1372.33,-285.36"/>
+<polygon fill="black" stroke="black" points="1373.03,-288.79 1382.43,-283.9 1372.03,-281.87 1373.03,-288.79"/>
 </g>
 <!-- 5 -->
 <g id="node6" class="node">
@@ -235,15 +229,15 @@
 <!-- 6&#45;&gt;5 -->
 <g id="edge4" class="edge">
 <title>6:39&#45;&gt;5</title>
-<path fill="none" stroke="black" d="M1272.19,-208.3C1291.67,-208.3 1290.6,-191.66 1308.19,-183.3 1314.74,-180.19 1321.4,-177.16 1328.17,-174.21"/>
-<polygon fill="black" stroke="black" points="1329.63,-177.39 1337.45,-170.23 1326.88,-170.95 1329.63,-177.39"/>
+<path fill="none" stroke="black" d="M1272.19,-246.3C1304.44,-246.3 1282.83,-203.22 1308.19,-183.3 1314.83,-178.08 1321.74,-173.15 1328.88,-168.49"/>
+<polygon fill="black" stroke="black" points="1330.77,-171.43 1337.35,-163.13 1327.03,-165.51 1330.77,-171.43"/>
 </g>
 <!-- 3 -->
 <g id="node4" class="node">
 <title>3</title>
 <polygon fill="#f2f2f2" stroke="black" points="2013.09,-134.9 2013.09,-275.7 2583.58,-275.7 2583.58,-134.9 2013.09,-134.9"/>
 <text text-anchor="middle" x="2298.33" y="-259.1" font-family="Courier New" font-size="14.00">History &lt;&lt;Struct&gt;&gt;</text>
-<text text-anchor="middle" x="2298.33" y="-242.3" font-family="Courier New" font-size="14.00">0xbb7b4a454dc3493923482f07822329ed19e8244eff582cc204f8554c3620c3fd</text>
+<text text-anchor="middle" x="2298.33" y="-242.3" font-family="Courier New" font-size="14.00">0xd7b6990105719101dabeb77144f2a3385c8033acd3af97e9423a695e81ad1eb5</text>
 <polyline fill="none" stroke="black" points="2013.09,-234.1 2583.58,-234.1 "/>
 <text text-anchor="middle" x="2082.29" y="-217.5" font-family="Courier New" font-size="14.00">offset</text>
 <polyline fill="none" stroke="black" points="2013.09,-209.3 2151.5,-209.3 "/>
@@ -265,7 +259,7 @@
 </g>
 <!-- 4&#45;&gt;3 -->
 <g id="edge5" class="edge">
-<title>4:29&#45;&gt;3</title>
+<title>4:30&#45;&gt;3</title>
 <path fill="none" stroke="black" d="M1928.64,-205.3C1952.8,-205.3 1977.85,-205.3 2003,-205.3"/>
 <polygon fill="black" stroke="black" points="2003.02,-208.8 2013.02,-205.3 2003.02,-201.8 2003.02,-208.8"/>
 </g>

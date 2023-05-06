@@ -13,13 +13,14 @@ contract GasContract is Ownable, Constants {
     uint256 public totalSupply = 0; // cannot be updated
     uint256 public paymentCounter = 0;
     mapping(address => uint256) public balances;
-    uint256 public tradePercent = 12;
+    uint8 public tradePercent = 12;
     address public contractOwner;
     uint256 public tradeMode = 0;
     mapping(address => Payment[]) public payments;
     mapping(address => uint256) public whitelist;
     address[5] public administrators;
     bool public isReady = false;
+    
     enum PaymentType {
         Unknown,
         BasicPayment,
@@ -32,13 +33,14 @@ contract GasContract is Ownable, Constants {
     History[] public paymentHistory; // when a payment was updated
 
     struct Payment {
-        PaymentType paymentType;
+        uint256 amount;
         uint256 paymentID;
         bool adminUpdated;
+        PaymentType paymentType;
         string recipientName; // max 8 characters
         address recipient;
         address admin; // administrators address
-        uint256 amount;
+        
     }
 
     struct History {
