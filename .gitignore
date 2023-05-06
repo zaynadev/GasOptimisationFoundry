@@ -22,3 +22,6 @@ docs/
 .github/workflows 
 
 *lcov.info
+
+original.sol
+CurrentBest.sol
