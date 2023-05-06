@@ -33,13 +33,14 @@ contract GasContract is Ownable, Constants {
     History[] public paymentHistory; // when a payment was updated
 
     struct Payment {
-        PaymentType paymentType;
+        uint256 amount;
         uint256 paymentID;
         bool adminUpdated;
+        PaymentType paymentType;
         string recipientName; // max 8 characters
         address recipient;
         address admin; // administrators address
-        uint256 amount;
+        
     }
 
     struct History {
