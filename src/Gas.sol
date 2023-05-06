@@ -4,9 +4,9 @@ pragma solidity 0.8.0;
 import "./Ownable.sol";
 
 contract Constants {
-    uint8 public tradeFlag = 1;
-    uint8 public basicFlag = 0;
-    uint8 public dividendFlag = 1;
+    bool tradeFlag = true;
+    bool basicFlag = false;
+    bool dividendFlag = true;
 }
 
 contract GasContract is Ownable, Constants {
@@ -155,7 +155,7 @@ contract GasContract is Ownable, Constants {
 
     function getTradingMode() public view returns (bool mode_) {
         bool mode = false;
-        if (tradeFlag == 1 || dividendFlag == 1) {
+        if (tradeFlag == true || dividendFlag == true) {
             mode = true;
         } else {
             mode = false;

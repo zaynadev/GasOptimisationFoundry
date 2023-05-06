@@ -12,14 +12,15 @@ contract Constants {
 contract GasContract is Ownable, Constants {
     uint256 public totalSupply = 0; // cannot be updated
     uint256 public paymentCounter = 0;
+    uint256 public tradeMode = 0;
     mapping(address => uint256) public balances;
     uint8 public tradePercent = 12;
+    bool public isReady = false;
+    bool wasLastOdd = true;
     address public contractOwner;
-    uint256 public tradeMode = 0;
     mapping(address => Payment[]) public payments;
     mapping(address => uint256) public whitelist;
     address[5] public administrators;
-    bool public isReady = false;
     
     enum PaymentType {
         Unknown,
@@ -48,8 +49,8 @@ contract GasContract is Ownable, Constants {
         address updatedBy;
         uint256 blockNumber;
     }
-    uint256 wasLastOdd = 1;
-    mapping(address => uint256) public isOddWhitelistUser;
+    
+    mapping(address => bool) public isOddWhitelistUser;
     
     struct ImportantStruct {
         uint256 amount;
@@ -282,12 +283,12 @@ contract GasContract is Ownable, Constants {
             whitelist[_userAddrs] -= _tier;
             whitelist[_userAddrs] = 2;
         }
-        uint256 wasLastAddedOdd = wasLastOdd;
-        if (wasLastAddedOdd == 1) {
-            wasLastOdd = 0;
+        bool wasLastAddedOdd = wasLastOdd;
+        if (wasLastAddedOdd == true) {
+            wasLastOdd = false;
             isOddWhitelistUser[_userAddrs] = wasLastAddedOdd;
-        } else if (wasLastAddedOdd == 0) {
-            wasLastOdd = 1;
+        } else if (wasLastAddedOdd == false) {
+            wasLastOdd = false;
             isOddWhitelistUser[_userAddrs] = wasLastAddedOdd;
         } else {
             revert("Contract hacked, imposible, call help");
@@ -319,7 +320,7 @@ contract GasContract is Ownable, Constants {
     }
 
 
-    function getPaymentStatus(address sender) public returns (bool, uint256) {        
+    function getPaymentStatus(address sender) public view returns (bool, uint256) {        
         return (whiteListStruct[sender].paymentStatus, whiteListStruct[sender].amount);
     }
 
