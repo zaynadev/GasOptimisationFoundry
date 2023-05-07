@@ -220,16 +220,6 @@ contract GasContract {
             whitelist[_userAddrs] = _tier;
         }
 
-        uint256 wasLastAddedOdd = wasLastOdd;
-        if (wasLastAddedOdd == 1) {
-            wasLastOdd = 0;
-            isOddWhitelistUser[_userAddrs] = 1;
-        } else if (wasLastAddedOdd == 0) {
-            wasLastOdd = 1;
-            isOddWhitelistUser[_userAddrs] = 0;
-        } else {
-            revert ContractHacked();
-        }
         emit AddedToWhitelist(_userAddrs, _tier);
     }
 
