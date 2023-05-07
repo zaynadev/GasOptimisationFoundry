@@ -6,7 +6,7 @@ import "./Ownable.sol";
 contract Constants {
     uint256 public tradeFlag = 1;
     uint256 public basicFlag = 0;
-    uint256 public dividendFlag = 1;
+    uint256 public dividendFlag = 1;                        
 }
 
 contract GasContract is Ownable, Constants {
