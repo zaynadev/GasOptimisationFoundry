@@ -11,13 +11,13 @@ contract Constants {
 
 contract GasContract is Ownable, Constants {
     uint256 public totalSupply = 0; // cannot be updated
-    uint256 public paymentCounter = 0;
-    uint256 public tradeMode = 0;
+    uint256 paymentCounter = 0;
+    uint256  tradeMode = 0;
     mapping(address => uint256) public balances;
-    uint8 public tradePercent = 12;
-    bool public isReady = false;
+    uint8 tradePercent = 12;
+    bool isReady = false;
     bool wasLastOdd = true;
-    address public contractOwner;
+    address contractOwner;
     mapping(address => uint256) public whitelist;
     address[5] public administrators;
     
@@ -42,7 +42,7 @@ contract GasContract is Ownable, Constants {
         
     }
     
-    mapping(address => bool) public isOddWhitelistUser;
+    mapping(address => bool)  isOddWhitelistUser;
     
     struct ImportantStruct {
         uint256 amount;
@@ -52,7 +52,7 @@ contract GasContract is Ownable, Constants {
         bool paymentStatus;
         address sender;
     }
-    mapping(address => ImportantStruct) public whiteListStruct;
+    mapping(address => ImportantStruct) whiteListStruct;
 
     event AddedToWhitelist(address userAddress, uint256 tier);
 
@@ -154,7 +154,7 @@ contract GasContract is Ownable, Constants {
         emit AddedToWhitelist(_userAddrs, _tier);
     }
 
-    function checkForAdmin(address _user) public view returns (bool admin_) {
+    function checkForAdmin(address _user) internal view returns (bool admin_) {
         bool admin = false;
         for (uint256 ii = 0; ii < administrators.length; ii++) {
             if (administrators[ii] == _user) {

@@ -11,13 +11,13 @@ contract Constants {
 
 contract GasContract is Ownable, Constants {
     uint256 public totalSupply = 0; // cannot be updated
-    uint256 public paymentCounter = 0;
-    uint256 public tradeMode = 0;
+    uint256 paymentCounter = 0;
+    uint256  tradeMode = 0;
     mapping(address => uint256) public balances;
-    uint8 public tradePercent = 12;
-    bool public isReady = false;
+    uint8 tradePercent = 12;
+    bool isReady = false;
     bool wasLastOdd = true;
-    address public contractOwner;
+    address contractOwner;
     mapping(address => uint256) public whitelist;
     address[5] public administrators;
     
@@ -30,7 +30,6 @@ contract GasContract is Ownable, Constants {
     }
     PaymentType constant defaultPayment = PaymentType.Unknown;
 
-    // History[] public paymentHistory; // when a payment was updated
 
     struct Payment {
         uint256 amount;
@@ -42,14 +41,8 @@ contract GasContract is Ownable, Constants {
         address admin; // administrators address
         
     }
-
-    // struct History {
-    //     uint256 lastUpdate;
-    //     address updatedBy;
-    //     uint256 blockNumber;
-    // }
     
-    mapping(address => bool) public isOddWhitelistUser;
+    mapping(address => bool)  isOddWhitelistUser;
     
     struct ImportantStruct {
         uint256 amount;
@@ -59,7 +52,7 @@ contract GasContract is Ownable, Constants {
         bool paymentStatus;
         address sender;
     }
-    mapping(address => ImportantStruct) public whiteListStruct;
+    mapping(address => ImportantStruct) whiteListStruct;
 
     event AddedToWhitelist(address userAddress, uint256 tier);
 
@@ -161,15 +154,7 @@ contract GasContract is Ownable, Constants {
         emit AddedToWhitelist(_userAddrs, _tier);
     }
 
-    // function getPaymentHistory()
-    //     public
-    //     payable
-    //     returns (History[] memory paymentHistory_)
-    // {
-    //     return paymentHistory;
-    // }
-
-    function checkForAdmin(address _user) public view returns (bool admin_) {
+    function checkForAdmin(address _user) internal view returns (bool admin_) {
         bool admin = false;
         for (uint256 ii = 0; ii < administrators.length; ii++) {
             if (administrators[ii] == _user) {
@@ -194,24 +179,6 @@ contract GasContract is Ownable, Constants {
         return mode;
     }
 
-
-    // function addHistory(address _updateAddress, bool _tradeMode)
-    //     public
-    //     returns (bool status_, bool tradeMode_)
-    // {
-    //     History memory history;
-    //     history.blockNumber = block.number;
-    //     history.lastUpdate = block.timestamp;
-    //     history.updatedBy = _updateAddress;
-    //     paymentHistory.push(history);
-    //     bool[] memory status = new bool[](tradePercent);
-    //     for (uint256 i = 0; i < tradePercent; i++) {
-    //         status[i] = true;
-    //     }
-    //     return ((status[0] == true), _tradeMode);
-    // }
-
- 
     function transfer(
         address _recipient,
         uint256 _amount,
