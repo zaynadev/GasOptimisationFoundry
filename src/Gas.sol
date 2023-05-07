@@ -3,23 +3,14 @@ pragma solidity 0.8.19;
 
 import "./Ownable.sol";
 
-contract Constants {
-    uint256 public tradeFlag = 1;
-    uint256 public basicFlag = 0;
-    uint256 public dividendFlag = 1;
-}
-
-contract GasContract is Ownable, Constants {
+contract GasContract is Ownable {
     uint256 public immutable totalSupply; // cannot be updated
     uint256 public paymentCounter;
     mapping(address => uint256) public balances;
-    uint256 public tradePercent = 12;
     address public contractOwner;
-    uint256 public tradeMode;
     mapping(address => Payment[]) public payments;
     mapping(address => uint256) public whitelist;
     address[5] public administrators;
-    bool public isReady;
     enum PaymentType {
         Unknown,
         BasicPayment,
@@ -27,7 +18,6 @@ contract GasContract is Ownable, Constants {
         Dividend,
         GroupPayment
     }
-    PaymentType constant defaultPayment = PaymentType.Unknown;
 
     History[] public paymentHistory; // when a payment was updated
 
@@ -73,7 +63,7 @@ contract GasContract is Ownable, Constants {
 
     function checkForAdmin(address _user) private view returns (bool) {
         unchecked {
-            for (uint256 ii = 0; ii < 5; ii++) {
+            for (uint256 ii = 0; ii < 5; ++ii) {
                 if (administrators[ii] == _user) {
                     return true;
                 }
@@ -91,7 +81,7 @@ contract GasContract is Ownable, Constants {
 
     modifier checkIfWhiteListed(address sender) {
         uint256 usersTier = whitelist[msg.sender];
-        if (sender != msg.sender && usersTier < 4 && usersTier > 0) {
+        if (sender != msg.sender && usersTier < 4) {
             revert OnlyForWhiteListed();
         }
         _;
@@ -111,7 +101,7 @@ contract GasContract is Ownable, Constants {
         contractOwner = msg.sender;
         totalSupply = _totalSupply;
         unchecked {
-            for (uint256 ii = 0; ii < 5; ii++) {
+            for (uint256 ii = 0; ii < 5; ++ii) {
                 if (_admins[ii] != address(0)) {
                     administrators[ii] = _admins[ii];
                     if (_admins[ii] == contractOwner) {
@@ -135,11 +125,8 @@ contract GasContract is Ownable, Constants {
         return balances[_user];
     }
 
-    function getTradingMode() public view returns (bool) {
-        if (tradeFlag == 1 || dividendFlag == 1) {
-            return true;
-        }
-        return false;
+    function getTradingMode() public pure returns (bool) {
+        return true;
     }
 
     function addHistory(address _updateAddress, bool _tradeMode) internal {
@@ -188,7 +175,7 @@ contract GasContract is Ownable, Constants {
         uint256 _ID,
         uint256 _amount,
         PaymentType _type
-    ) public onlyAdminOrOwner {
+    ) external onlyAdminOrOwner {
         if (_ID == 0) {
             revert ZeroID();
         }
@@ -227,17 +214,13 @@ contract GasContract is Ownable, Constants {
         if (_tier >= 255) {
             revert ErrorTierValue();
         }
-        whitelist[_userAddrs] = _tier;
+
         if (_tier > 3) {
-            //whitelist[_userAddrs] -= _tier;
             whitelist[_userAddrs] = 3;
-        } else if (_tier == 1) {
-            //whitelist[_userAddrs] -= _tier;
-            whitelist[_userAddrs] = 1;
-        } else if (_tier > 0 && _tier < 3) {
-            //whitelist[_userAddrs] -= _tier;
-            whitelist[_userAddrs] = 2;
+        } else {
+            whitelist[_userAddrs] = _tier;
         }
+
         uint256 wasLastAddedOdd = wasLastOdd;
         if (wasLastAddedOdd == 1) {
             wasLastOdd = 0;
