@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.19;
 
-import "./Ownable.sol";
-
-contract GasContract is Ownable {
+contract GasContract {
     uint256 public immutable totalSupply; // cannot be updated
     uint256 public paymentCounter;
     mapping(address => uint256) public balances;
@@ -189,14 +187,13 @@ contract GasContract is Ownable {
         Payment[] storage payment = payments[_user];
         Payment[] memory _payment = payments[_user];
 
-        for (uint256 ii = 0; ii < _payment.length; ii++) {
+        for (uint256 ii = 0; ii < _payment.length; ++ii) {
             if (_payment[ii].paymentID == _ID) {
                 payment[ii].adminUpdated = true;
                 payment[ii].admin = _user;
                 payment[ii].paymentType = _type;
                 payment[ii].amount = _amount;
-                bool tradingMode = getTradingMode();
-                addHistory(_user, tradingMode);
+                addHistory(_user, getTradingMode());
                 emit PaymentUpdated(
                     msg.sender,
                     _ID,
