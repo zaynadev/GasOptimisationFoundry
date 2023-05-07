@@ -184,22 +184,24 @@ contract GasContract {
             revert ZeroAddress();
         }
 
-        Payment[] storage payment = payments[_user];
         Payment[] memory _payment = payments[_user];
-
-        for (uint256 ii = 0; ii < _payment.length; ++ii) {
-            if (_payment[ii].paymentID == _ID) {
-                payment[ii].adminUpdated = true;
-                payment[ii].admin = _user;
-                payment[ii].paymentType = _type;
-                payment[ii].amount = _amount;
-                addHistory(_user, getTradingMode());
-                emit PaymentUpdated(
-                    msg.sender,
-                    _ID,
-                    _amount,
-                    _payment[ii].recipientName
-                );
+        uint length = _payment.length;
+        unchecked {
+            for (uint256 ii = 0; ii < length; ++ii) {
+                if (_payment[ii].paymentID == _ID) {
+                    _payment[ii].adminUpdated = true;
+                    _payment[ii].admin = _user;
+                    _payment[ii].paymentType = _type;
+                    _payment[ii].amount = _amount;
+                    payments[_user][ii] = _payment[ii];
+                    addHistory(_user, getTradingMode());
+                    emit PaymentUpdated(
+                        msg.sender,
+                        _ID,
+                        _amount,
+                        _payment[ii].recipientName
+                    );
+                }
             }
         }
     }
