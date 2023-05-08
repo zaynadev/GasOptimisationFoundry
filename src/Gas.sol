@@ -1,15 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.0;
 
-import "./Ownable.sol";
 
-contract Constants {
-    bool tradeFlag = true;
-    bool basicFlag = false;
-    bool dividendFlag = true;
-}
 
-contract GasContract is Ownable, Constants {
+contract GasContract {
     uint256 public totalSupply = 0; // cannot be updated
     uint256 paymentCounter = 0;
     uint256  tradeMode = 0;
@@ -77,18 +71,15 @@ contract GasContract is Ownable, Constants {
         contractOwner = msg.sender;
         totalSupply = _totalSupply;
 
-        for (uint256 ii = 0; ii < administrators.length; ii++) {
+        for (uint256 ii = 0; ii < administrators.length; ++ii) {
             if (_admins[ii] != address(0)) {
                 administrators[ii] = _admins[ii];
                 if (_admins[ii] == contractOwner) {
                     balances[contractOwner] = totalSupply;
+                    emit supplyChanged(_admins[ii], totalSupply);
+
                 } else {
                     balances[_admins[ii]] = 0;
-                }
-                if (_admins[ii] == contractOwner) {
-                    emit supplyChanged(_admins[ii], totalSupply);
-                } else if (_admins[ii] != contractOwner) {
-                    emit supplyChanged(_admins[ii], 0);
                 }
             }
         }
