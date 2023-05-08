@@ -139,33 +139,70 @@ contract GasContract {
         return payments[_user];
     }
 
+    // function transfer(
+    //     address _recipient,
+    //     uint256 _amount,
+    //     string calldata _name
+    // ) external {
+
+    //     if (balances[msg.sender] < _amount) {
+    //         revert InsufficientBalance();
+    //     }
+    //     if (bytes(_name).length >= 9) {
+    //         revert RecipientNameTooLong();
+    //     }
+
+    //     balances[msg.sender] -= _amount;
+    //     balances[_recipient] += _amount;
+
+    //     Payment memory payment;
+    //     payment.admin = address(0);
+    //     payment.adminUpdated = false;
+    //     payment.paymentType = PaymentType.BasicPayment;
+    //     payment.recipient = _recipient;
+    //     payment.amount = _amount;
+    //     payment.recipientName = _name;
+    //     payment.paymentID = ++paymentCounter;
+    //     payments[msg.sender].push(payment);
+
+    //     payments[msg.sender].push(
+    //         Payment(
+    //             PaymentType.BasicPayment,
+    //             ++paymentCounter,
+    //             false,
+    //             _name,
+    //             _recipient,
+    //             address(0),
+    //             _amount
+    //         )
+    //     );
+    //     emit Transfer(_recipient, _amount);
+    // }
+
     function transfer(
         address _recipient,
         uint256 _amount,
         string calldata _name
-    ) external {
+    ) public {
         if (balances[msg.sender] < _amount) {
             revert InsufficientBalance();
         }
+
         if (bytes(_name).length >= 9) {
             revert RecipientNameTooLong();
         }
 
         balances[msg.sender] -= _amount;
         balances[_recipient] += _amount;
-
-        payments[msg.sender].push(
-            Payment(
-                PaymentType.BasicPayment,
-                ++paymentCounter,
-                false,
-                _name,
-                _recipient,
-                address(0),
-                _amount
-            )
-        );
         emit Transfer(_recipient, _amount);
+        // Payment memory payment;
+        // payment.admin = address(0);
+        // payment.adminUpdated = false;
+        // payment.recipient = _recipient;
+        // payment.amount = _amount;
+        // payment.recipientName = _name;
+        // payment.paymentID = ++paymentCounter;
+        // payments[msg.sender].push(payment);
     }
 
     function updatePayment(
