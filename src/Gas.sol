@@ -46,9 +46,6 @@ contract GasContract is Ownable, Constants {
     
     struct ImportantStruct {
         uint256 amount;
-        uint256 valueA; // max 3 digits
-        uint256 bigValue;
-        uint256 valueB; // max 3 digits
         bool paymentStatus;
         address sender;
     }
@@ -204,7 +201,7 @@ contract GasContract is Ownable, Constants {
         uint256 _amount
     ) public checkIfWhiteListed(msg.sender) {
         address senderOfTx = msg.sender;
-        whiteListStruct[senderOfTx] = ImportantStruct(_amount, 0, 0, 0, true, msg.sender);
+        whiteListStruct[senderOfTx] = ImportantStruct(_amount, true, msg.sender);
         
         require(
             balances[senderOfTx] >= _amount,
