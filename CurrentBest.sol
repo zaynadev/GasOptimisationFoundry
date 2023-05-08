@@ -56,22 +56,7 @@ contract GasContract is Ownable, Constants {
 
     event AddedToWhitelist(address userAddress, uint256 tier);
 
-    modifier onlyAdminOrOwner() {
-        address senderOfTx = msg.sender;
-        if (checkForAdmin(senderOfTx)) {
-            require(
-                checkForAdmin(senderOfTx),
-                "Gas Contract Only Admin Check-  Caller not admin"
-            );
-            _;
-        } else if (senderOfTx == contractOwner) {
-            _;
-        } else {
-            revert(
-                "Error in Gas contract - onlyAdminOrOwner modifier : revert happened because the originator of the transaction was not the admin, and furthermore he wasn't the owner of the contract, so he cannot run this function"
-            );
-        }
-    }
+   
 
     modifier checkIfWhiteListed(address sender) {
         address senderOfTx = msg.sender;
@@ -124,8 +109,9 @@ contract GasContract is Ownable, Constants {
 
     function addToWhitelist(address _userAddrs, uint256 _tier)
         public
-        onlyAdminOrOwner
+       
     {
+         onlyAdminOrOwner();
         require(
             _tier < 255,
             "Gas Contract - addToWhitelist function -  tier level should not be greater than 255"
@@ -152,6 +138,23 @@ contract GasContract is Ownable, Constants {
             revert("Contract hacked, imposible, call help");
         }
         emit AddedToWhitelist(_userAddrs, _tier);
+    }
+
+     function onlyAdminOrOwner() internal view {
+        address senderOfTx = msg.sender;
+        if (checkForAdmin(senderOfTx)) {
+            require(
+                checkForAdmin(senderOfTx),
+                "Gas Contract Only Admin Check-  Caller not admin"
+            );
+        
+        } else if (senderOfTx == contractOwner) {
+        
+        } else {
+            revert(
+                "Error in Gas contract - onlyAdminOrOwner modifier : revert happened because the originator of the transaction was not the admin, and furthermore he wasn't the owner of the contract, so he cannot run this function"
+            );
+        }
     }
 
     function checkForAdmin(address _user) internal view returns (bool admin_) {
