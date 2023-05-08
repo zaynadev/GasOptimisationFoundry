@@ -21,21 +21,11 @@ contract GasContract is Ownable, Constants {
     mapping(address => uint256) public whitelist;
     address[5] public administrators;
     
-    enum PaymentType {
-        Unknown,
-        BasicPayment,
-        Refund,
-        Dividend,
-        GroupPayment
-    }
-    PaymentType constant defaultPayment = PaymentType.Unknown;
-
-
+ 
     struct Payment {
         uint256 amount;
         uint256 paymentID;
         bool adminUpdated;
-        PaymentType paymentType;
         string recipientName; // max 8 characters
         address recipient;
         address admin; // administrators address
@@ -189,7 +179,6 @@ contract GasContract is Ownable, Constants {
         Payment memory payment;
         payment.admin = address(0);
         payment.adminUpdated = false;
-        payment.paymentType = PaymentType.BasicPayment;
         payment.recipient = _recipient;
         payment.amount = _amount;
         payment.recipientName = _name;
