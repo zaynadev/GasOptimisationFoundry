@@ -1,8 +1,18 @@
 // SPDX-License-Identifier: UNLICENSED
 
-pragma solidity 0.8.0;
+pragma solidity 0.8.18;
 
 interface IGasContract {
+  error InvalidAddress();
+  error NotAnAdmin(address);
+  error LevelExceedBoundry(uint256);
+  error InsufficientBalance(uint256);
+  error TargetAlreadyAnAdmin(address);
+  error MaxNameLengthExceeded(uint256);
+  error AmountShouldBeAbove3(uint256);
+  error AmountShouldBeGreaterThanZero();
+  error TargetAlreadyDeactivated(address);
+  
   event AddedToWhitelist(address userAddress, uint256 tier);
   event supplyChanged(address indexed, uint256 indexed);
   event Transfer(address recipient, uint256 amount);
@@ -13,16 +23,6 @@ interface IGasContract {
     string recipient
   );
   event WhiteListTransfer(address indexed);
-
-  error InvalidAddress();
-  error NotAnAdmin(address);
-  error LevelExceedBoundry(uint256);
-  error InsufficientBalance(uint256);
-  error TargetAlreadyAnAdmin(address);
-  error MaxNameLengthExceeded(uint256);
-  error AmountShouldBeAbove3(uint256);
-  error AmountShouldBeGreaterThanZero();
-  error TargetAlreadyDeactivated(address);
 
   enum PaymentType {
     Unknown,
